@@ -1,0 +1,49 @@
+.form {
+    display: flex;
+    flex-direction: row;
+}
+
+.fileinput{
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 00;
+    width: 100%;
+}
+
+.fileinput::-webkit-file-upload-button {
+    display: none;
+}
+
+.fileinput::before {
+    content: 'Choose File';
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    width: 120px;
+    border-radius: 3px;
+    font-size: 16px;
+    border: none;
+    font-weight: 700;
+    background-color: gray;
+    color: white;
+    padding: 10px 0px;
+    margin-right: 10px;
+}
+
+.fileinput:hover::before {
+    cursor: pointer;
+}
+
+.submitbutton {
+    background-color: gray;
+    border: none;
+    border-radius: 3px;
+    font-weight: 700;
+    color: white;
+    width: 120px;
+    font-size: 16px;
+}
+
+.submitbutton:hover{
+    cursor: pointer;
+}
