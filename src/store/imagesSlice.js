@@ -8,7 +8,7 @@ export const fetchAllImages = createAsyncThunk(
     'images/fetchAll',
     async (_, { rejectWithValue }) => {
         try {
-            const response = await fetch('http://localhost:4000/api/get/images');
+            const response = await fetch('/api/get/images');
             const data = await response.json();
             return { data: data.body };
         } catch (err) {
@@ -25,7 +25,7 @@ export const uploadImages = createAsyncThunk(
             const formData = new FormData();
             for (let i = 0; i < images.length; i++) formData.append('images', images[i]);
 
-            const response = await fetch('http://localhost:4000/api/save/images', {
+            const response = await fetch('/api/save/images', {
                 method: 'POST',
                 body: formData
             });
@@ -44,7 +44,7 @@ export const deleteImage = createAsyncThunk(
     'images/delete',
     async (key, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:4000/api/delete/image/${key}`, { method: 'DELETE' });
+            const response = await fetch(`/api/delete/image/${key}`, { method: 'DELETE' });
             const data = await response.json();
 
             return { data: data.body };
