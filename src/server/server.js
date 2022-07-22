@@ -6,10 +6,13 @@ const imageRouter = require('./router');
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-app.use(express.static(path.join(__dirname, '../build')));
+app.use(express.static(path.join(__dirname, '../../build')));
 
 app.use(CORS());
 app.use('/api', imageRouter);
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../build/index.html'));
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
