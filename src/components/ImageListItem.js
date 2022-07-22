@@ -7,7 +7,7 @@ const ImageListItem = ({ id }) => {
 
     return (
         <div className={classes.container} >
-            <a href={`/api/get/image/${id}`} target='_blank'>
+            <a href={`/api/get/image/${id}`} rel="noreferrer" target='_blank'>
                 <img alt={id} src={`/api/get/image/${id}`} />
             </a>
             <button onClick={() => { dispatch(deleteImage(id)); }} >Delete Image</button>

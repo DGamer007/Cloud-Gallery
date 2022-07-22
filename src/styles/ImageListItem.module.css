@@ -5,8 +5,13 @@
     row-gap: 5px;
 }
 
-.container img {
-    width: 50%
+.container a {
+    display: block;
+    width: 50%;
+}
+
+.container a img{
+    width: 100%;
 }
 
 .container button {
